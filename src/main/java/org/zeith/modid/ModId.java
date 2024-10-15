@@ -10,7 +10,7 @@ import org.zeith.modid.init.ItemsMI;
 
 @Mod(ModId.MOD_ID)
 public class ModId {
-    public static final String MOD_ID = "modid";
+    public static final String MOD_ID = "demo_mod_2";
 
     @CreativeTab.RegisterTab
     public static final CreativeTab MOD_TAB = new CreativeTab(id("root"),

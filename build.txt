@@ -1,5 +1,5 @@
 # Mod Info
-mod_version=20.1.1
+mod_version=1.0.0
 build_candidate=false
 
 # Mod dependencies (jei is not a requirement, but HammerLib is)
@@ -8,14 +8,14 @@ jei_version=15.2.0.22
 # hammeranims_version=20.1.16
 
 # Persistent mod info
-mod_id=modid
-archive_name=ModId
-mod_name=Mod Name
-mod_description=Example mod description.\nNewline characters can be used and will be replaced properly.
-mod_authors=Zeitheron
+mod_id=demo_mod_2
+archive_name=DemoMod2
+mod_name=Demo Mod 2
+mod_description=
+mod_authors=MrFoxHD
 mod_license=All Rights Reserved
 mod_credits=None
-issue_tracker_url=https://github.com/dragon-forge/HammerLib/issues
+issue_tracker_url=
 
 # Maven Info
 maven_group=org.zeith.modid
