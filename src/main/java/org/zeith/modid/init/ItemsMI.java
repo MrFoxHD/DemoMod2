@@ -8,7 +8,7 @@ import org.zeith.modid.items.LightningWandItem;
 @SimplyRegister
 public interface ItemsMI {
     @RegistryName("lightning_wand")
-    Item WAND = new LightningWandItem(new Item.Properties().stacksTo(1).durability(100));
+    Item WAND = new LightningWandItem(new Item.Properties().stacksTo(1).durability(5));
     @RegistryName("lightning_ball_item")
     Item LIGHTNING_BALL = new Item(new Item.Properties().stacksTo(1));
 }

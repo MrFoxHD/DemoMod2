@@ -12,6 +12,6 @@ import org.zeith.modid.init.EntityMI;
 public class RendersInit {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityMI.tile, LightningBallRenderer::new);
+        event.registerEntityRenderer(EntityMI.tile, ThrownItemRenderer::new);
     }
 }
