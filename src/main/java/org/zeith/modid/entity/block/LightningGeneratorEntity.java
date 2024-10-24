@@ -40,11 +40,11 @@ public class LightningGeneratorEntity extends TileSyncableTickable {
         AABB aabb = new AABB(pos).inflate(radius);
         List<LightningBolt> bolts = level.getEntitiesOfClass(LightningBolt.class, aabb);
         for (LightningBolt bolt : bolts) {
-            if (bolt.getTags().contains(lightningGenerator.hash())) continue;
+            if (bolt.getTags().contains("lgHandled")) continue;
             Vec3 position = bolt.position();
             double distance = position.distanceTo(lightningGenerator.getBlockPos().getCenter());
             if (distance > radius) continue;
-            bolt.addTag(lightningGenerator.hash());
+            bolt.addTag("lgHandled");
             int addedEnergy = energyPerBolt - (int) ((double) energyPerBolt / radius * Math.max(distance - 1, 0));
             lightningGenerator.getEnergyStorage().receiveEnergy(addedEnergy, false);
             System.out.println("addEnergy | curr=" + lightningGenerator.getEnergyStorage().getEnergyStored());
@@ -76,22 +76,16 @@ public class LightningGeneratorEntity extends TileSyncableTickable {
         return energyStorage;
     }
 
-    public String hash() {
-        BlockPos pos = this.getBlockPos();
-        return "lge" + pos.getX() + pos.getY() + pos.getZ();
-    }
-
-    public void UpdateConnected() {
-        if (level instanceof ServerLevel) {
-            List<IEnergyStorage> recipients = new ArrayList<>();
-            for (Direction direction : Direction.values()) {
-                BlockEntity te = level.getBlockEntity(worldPosition.relative(direction));
-                if (te != null) {
-                    te.getCapability(ForgeCapabilities.ENERGY, direction.getOpposite()).ifPresent(recipients::add);
-                }
+    public void updateConnected() {
+        if (level == null || level.isClientSide()) return;
+        List<IEnergyStorage> recipients = new ArrayList<>();
+        for (Direction direction : Direction.values()) {
+            BlockEntity te = level.getBlockEntity(worldPosition.relative(direction));
+            if (te != null) {
+                te.getCapability(ForgeCapabilities.ENERGY, direction.getOpposite()).ifPresent(recipients::add);
             }
-            this.recipients = recipients;
         }
+        this.recipients = recipients;
     }
 
     private void transferEnergy() {

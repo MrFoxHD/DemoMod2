@@ -9,6 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.zeith.modid.entity.projectile.LightningBallProjectile;
 import org.zeith.modid.init.EntityInit;
+import org.zeith.modid.init.ItemsComponentInit;
 import org.zeith.modid.init.ItemsInit;
 
 public class LightningWandItem extends Item {
@@ -22,7 +23,7 @@ public class LightningWandItem extends Item {
         if (level.isClientSide()) return InteractionResultHolder.success(stack);
 
         LightningBallProjectile projectile = new LightningBallProjectile(EntityInit.tile, level);
-        projectile.setItem(new ItemStack(ItemsInit.LIGHTNING_BALL));
+        projectile.setItem(new ItemStack(ItemsComponentInit.LIGHTNING_BALL));
         projectile.setPos(player.getX(), player.getY() + player.getEyeHeight(), player.getZ());
 
         float speed = 0.5F;

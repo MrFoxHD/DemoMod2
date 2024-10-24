@@ -10,6 +10,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import org.zeith.modid.init.ItemsComponentInit;
 import org.zeith.modid.init.ItemsInit;
 
 public class LightningBallProjectile extends ThrowableItemProjectile {
@@ -19,7 +20,7 @@ public class LightningBallProjectile extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemsInit.LIGHTNING_BALL;
+        return ItemsComponentInit.LIGHTNING_BALL;
     }
 
     @Override

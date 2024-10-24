@@ -6,8 +6,7 @@ import org.zeith.hammerlib.api.items.CreativeTab;
 import org.zeith.hammerlib.core.adapter.LanguageAdapter;
 import org.zeith.hammerlib.core.init.ItemsHL;
 import org.zeith.hammerlib.proxy.HLConstants;
-import org.zeith.modid.init.BlocksInit;
-import org.zeith.modid.init.ItemsInit;
+import org.zeith.hammerlib.util.mcf.Resources;
 
 @Mod(MainClass.MOD_ID)
 public class MainClass {
@@ -18,10 +17,6 @@ public class MainClass {
             builder -> builder
                     .icon(() -> ItemsHL.COPPER_GEAR.getDefaultInstance())
                     .withTabsBefore(HLConstants.HL_TAB.id())
-                    .displayItems(((itemDisplayParameters, output) -> {
-                        output.accept(ItemsInit.WAND);
-                        output.accept(BlocksInit.LIGHTNING_GENERATOR_BLOCK);
-                    }))
     );
 
     public MainClass() {
@@ -29,6 +24,6 @@ public class MainClass {
     }
 
     public static ResourceLocation id(String path) {
-        return new ResourceLocation(MOD_ID, path);
+        return Resources.location(MOD_ID, path);
     }
 }

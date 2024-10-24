@@ -37,7 +37,7 @@ public class LightningGeneratorBlock extends BaseEntityBlock {
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState newState, boolean something) {
         BlockEntity generatorTile = level.getBlockEntity(pos);
         if (generatorTile instanceof LightningGeneratorEntity lightningGenerator) {
-            lightningGenerator.UpdateConnected();
+            lightningGenerator.updateConnected();
         }
         super.onPlace(state, level, pos, newState, something);
     }
@@ -46,7 +46,7 @@ public class LightningGeneratorBlock extends BaseEntityBlock {
     public BlockState updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor level, BlockPos pos, BlockPos facingPos) {
         BlockEntity generatorTile = level.getBlockEntity(pos);
         if (generatorTile instanceof LightningGeneratorEntity lightningGenerator) {
-            lightningGenerator.UpdateConnected();
+            lightningGenerator.updateConnected();
         }
         return super.updateShape(state, direction, newState, level, pos, facingPos);
     }
