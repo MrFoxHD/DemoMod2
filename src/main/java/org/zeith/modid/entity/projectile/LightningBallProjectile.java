@@ -5,15 +5,12 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import org.zeith.modid.init.ItemsMI;
-
-import java.util.Random;
+import org.zeith.modid.init.ItemsInit;
 
 public class LightningBallProjectile extends ThrowableItemProjectile {
     public LightningBallProjectile(EntityType<? extends ThrowableItemProjectile> type, Level level) {
@@ -22,7 +19,7 @@ public class LightningBallProjectile extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemsMI.LIGHTNING_BALL;
+        return ItemsInit.LIGHTNING_BALL;
     }
 
     @Override

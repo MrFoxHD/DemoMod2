@@ -6,10 +6,11 @@ import org.zeith.hammerlib.api.items.CreativeTab;
 import org.zeith.hammerlib.core.adapter.LanguageAdapter;
 import org.zeith.hammerlib.core.init.ItemsHL;
 import org.zeith.hammerlib.proxy.HLConstants;
-import org.zeith.modid.init.ItemsMI;
+import org.zeith.modid.init.BlocksInit;
+import org.zeith.modid.init.ItemsInit;
 
-@Mod(ModId.MOD_ID)
-public class ModId {
+@Mod(MainClass.MOD_ID)
+public class MainClass {
     public static final String MOD_ID = "demo_mod_2";
 
     @CreativeTab.RegisterTab
@@ -18,11 +19,12 @@ public class ModId {
                     .icon(() -> ItemsHL.COPPER_GEAR.getDefaultInstance())
                     .withTabsBefore(HLConstants.HL_TAB.id())
                     .displayItems(((itemDisplayParameters, output) -> {
-                        output.accept(ItemsMI.WAND);
+                        output.accept(ItemsInit.WAND);
+                        output.accept(BlocksInit.LIGHTNING_GENERATOR_BLOCK);
                     }))
     );
 
-    public ModId() {
+    public MainClass() {
         LanguageAdapter.registerMod(MOD_ID);
     }
 

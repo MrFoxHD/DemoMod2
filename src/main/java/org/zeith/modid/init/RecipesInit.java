@@ -6,11 +6,11 @@ import org.zeith.hammerlib.api.IRecipeProvider;
 import org.zeith.hammerlib.event.recipe.RegisterRecipesEvent;
 
 @ProvideRecipes
-public class Recipes implements IRecipeProvider {
+public class RecipesInit implements IRecipeProvider {
     @Override
     public void provideRecipes(RegisterRecipesEvent event) {
         event.shaped()
-                .result(ItemsMI.WAND)
+                .result(ItemsInit.WAND)
                 .shape("gsg", " o ", " g ")
                 .map('g', Items.GOLD_INGOT)
                 .map('o', Items.OBSIDIAN)

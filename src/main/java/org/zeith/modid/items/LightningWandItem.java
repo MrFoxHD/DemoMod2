@@ -5,12 +5,11 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.zeith.modid.entity.projectile.LightningBallProjectile;
-import org.zeith.modid.init.EntityMI;
-import org.zeith.modid.init.ItemsMI;
+import org.zeith.modid.init.EntityInit;
+import org.zeith.modid.init.ItemsInit;
 
 public class LightningWandItem extends Item {
     public LightningWandItem(Properties properties) {
@@ -22,8 +21,8 @@ public class LightningWandItem extends Item {
         ItemStack stack = player.getItemInHand(hand);
         if (level.isClientSide()) return InteractionResultHolder.success(stack);
 
-        LightningBallProjectile projectile = new LightningBallProjectile(EntityMI.tile, level);
-        projectile.setItem(new ItemStack(ItemsMI.LIGHTNING_BALL));
+        LightningBallProjectile projectile = new LightningBallProjectile(EntityInit.tile, level);
+        projectile.setItem(new ItemStack(ItemsInit.LIGHTNING_BALL));
         projectile.setPos(player.getX(), player.getY() + player.getEyeHeight(), player.getZ());
 
         float speed = 0.5F;

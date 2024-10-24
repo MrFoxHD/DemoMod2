@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "demo_mod_2:block/lightning_generator"
+    }
+  }
+}

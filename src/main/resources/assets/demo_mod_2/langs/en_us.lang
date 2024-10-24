@@ -1,3 +1,5 @@
 creative_tab.demo_mod_2.root=Demo Mod 2 by MrFoxHD
 
 item.demo_mod_2.lightning_wand=Lightning Wand
+
+block.demo_mod_2.lightning_generator=Lightning Generator

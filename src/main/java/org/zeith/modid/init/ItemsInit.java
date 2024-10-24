@@ -6,7 +6,7 @@ import org.zeith.hammerlib.annotations.SimplyRegister;
 import org.zeith.modid.items.LightningWandItem;
 
 @SimplyRegister
-public interface ItemsMI {
+public interface ItemsInit {
     @RegistryName("lightning_wand")
     Item WAND = new LightningWandItem(new Item.Properties().stacksTo(1).durability(5));
     @RegistryName("lightning_ball_item")

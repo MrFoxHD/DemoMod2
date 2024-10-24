@@ -5,13 +5,13 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.zeith.modid.ModId;
-import org.zeith.modid.init.EntityMI;
+import org.zeith.modid.MainClass;
+import org.zeith.modid.init.EntityInit;
 
-@Mod.EventBusSubscriber(modid = ModId.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = MainClass.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class RendersInit {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityMI.tile, ThrownItemRenderer::new);
+        event.registerEntityRenderer(EntityInit.tile, ThrownItemRenderer::new);
     }
 }
